@@ -10,6 +10,7 @@ import TapFunction from "./EditorComponents/TapFunction";
 import { Streams } from "./App";
 import TempoComponent from "./EditorComponents/TempoComponent";
 import MouseClickSignal from "./EditorComponents/Events/MouseClickSignal";
+import PlayNoteComponent from "./EditorComponents/Events/PlayNoteComponent";
 
 const options: () => undefined = () => {
 	return {
@@ -46,6 +47,7 @@ export default async (streams: Streams) => {
 		new TapFunction(streams.ConsoleStream),
 		new TempoComponent(engineProcessing),
 		new MouseClickSignal(engineProcessing),
+		new PlayNoteComponent(),
 	];
 
 	components.forEach((c) => {
