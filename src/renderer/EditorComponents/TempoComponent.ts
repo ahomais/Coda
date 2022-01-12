@@ -2,8 +2,9 @@ import Rete, { Node } from "rete";
 import { NodeData, WorkerInputs, WorkerOutputs } from "rete/types/core/data";
 import Sockets from "./Sockets";
 import { interval } from "rxjs";
+import BasicComponent from "./BasicComponent";
 
-export default class TempoComponent extends Rete.Component {
+export default class TempoComponent extends BasicComponent {
 	public interval;
 	public process;
 
