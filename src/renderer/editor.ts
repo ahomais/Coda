@@ -77,6 +77,10 @@ export default async (streams: Streams) => {
 	editor.on("noderemoved", engineProcessing);
 	editor.on("connectioncreated", engineProcessing);
 	editor.on("connectionremoved", engineProcessing);
+	editor.on("updateconnection", () => {
+		console.log(editor.toJSON());
+	});
+
 
 	// editor.view.resize();
 	// editor.trigger('process');
