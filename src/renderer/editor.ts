@@ -8,7 +8,7 @@ import AddOperatorComponent from "./EditorComponents/Math/Operators/AddComponent
 import NumComponent from "./EditorComponents/NumComponent";
 import TapFunction from "./EditorComponents/TapFunction";
 import { Streams } from "./App";
-import TempoComponent from "./EditorComponents/TempoComponent";
+import TempoComponent from "./EditorComponents/Events/TempoComponent";
 import MouseClickSignal from "./EditorComponents/Events/MouseClickSignal";
 import PlayNoteComponent from "./EditorComponents/Events/PlayNoteComponent";
 
@@ -80,7 +80,6 @@ export default async (streams: Streams) => {
 	editor.on("updateconnection", () => {
 		console.log(editor.toJSON());
 	});
-
 
 	// editor.view.resize();
 	// editor.trigger('process');
