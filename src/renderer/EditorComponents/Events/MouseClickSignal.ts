@@ -14,7 +14,6 @@ export default class MouseClickSignal extends Rete.Component {
 			map((event) => {
 				event.clientX, event.clientY;
 			}),
-		
 		);
 		this.xCordinate = 0;
 		this.process = engineProcessor;
@@ -22,12 +21,6 @@ export default class MouseClickSignal extends Rete.Component {
 
 	async builder(node: Node) {
 		node.addOutput(new Rete.Output("observable", "Observable", Sockets.ObservableValue));
-		// this.mouseClickStream.subscribe((xCordinate) => {
-		// 	this.xCordinate = xCordinate;
-		// 	if (this.editor) {
-		// 		this.process();
-		// 	}
-		// });
 	}
 
 	worker(node: NodeData, inputs: WorkerInputs, outputs: WorkerOutputs) {
@@ -36,7 +29,7 @@ export default class MouseClickSignal extends Rete.Component {
 
 		outputs.observable = {
 			name: node.id,
-			data: this.mouseClickStream,
+			observable: this.mouseClickStream,
 		};
 	}
 }
