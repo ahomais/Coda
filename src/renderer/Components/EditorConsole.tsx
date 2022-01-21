@@ -18,8 +18,6 @@ export default (props: Streams) => {
 	//Subscribe to the Console stream, listen for updates, and set the console text accordingly
 	useEffect(() => {
 		// const handleLog = (log: string) => {
-		// 	// console.log(log);
-		// 	// console.log(consoleText);
 		// 	setConsole(consoleText + "\n" + log);
 		// };
 		const subscription = props.ConsoleStream.subscribe((newLog) => {
