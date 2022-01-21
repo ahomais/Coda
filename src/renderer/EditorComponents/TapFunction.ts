@@ -47,6 +47,7 @@ export default class TapFunction extends Rete.Component {
 			// 	data: input.data,
 			// 	observable: this.subject,
 			// };
+
 		});
 
 		// if (isNumberArray(inputs.num)) {
