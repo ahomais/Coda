@@ -35,19 +35,15 @@ export default class TapFunction extends Rete.Component {
 		};
 
 		handleInputSubscriptions(inputs, "num", this.subscriptions, () => {
-			// const input = inputs.num[0] as {
-			// 	name: string;
-			// 	observable: Observable<unknown> | Subject<unknown>;
-			// };
-			// console.log(input.);
-			// this.consoleStream.next(input.data + "");
-			// this.subject.next(input.data);
-			// outputs.num = {
-			// 	name: node.id,
-			// 	data: input.data,
-			// 	observable: this.subject,
-			// };
-
+			const input = inputs.num[0];
+			if (!this.subscriptions[input.name]) {
+				this.subscriptions[input.name] = input.observable.subscribe((value) => {
+					//Print to console and editor console
+					console.log(value);
+					this.consoleStream.next(value + "");
+					this.subject.next(value);
+				});
+			}
 		});
 
 		// if (isNumberArray(inputs.num)) {
